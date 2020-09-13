@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useRecipeCalls } from "../../redux/dispatchers";
 import { useRecipes } from "../../redux/selectors";
 import { RecipeResponseObject } from "../../redux/models";
+import ImgPreview from "../../components/imgPreview";
 
 
 const Recipes = () => {
@@ -15,16 +16,15 @@ const Recipes = () => {
     }, []);
     return (
         <div>
-            <h1>Hello Parcero</h1>
             {recipes &&
-                recipes.map(({ fields } : RecipeResponseObject) => (
-                    <div>
+                recipes.map(({ fields, sys } : RecipeResponseObject) => (
+                    <div key={sys?.id}>
+                        <ImgPreview id={fields.photo?.sys?.id} />
                         <div>{fields?.title}</div>
                     </div>
                 ))
             }
         </div>
-        
     )
 };
 

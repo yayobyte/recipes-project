@@ -1,8 +1,6 @@
 /** Basic type of a key:value pair */
 export type KeyValuePair = {[Key: string] : any};
 
-type AssetsArray = [{[Key: string] : KeyValuePair}];
-
 /** Recipes reducer structure */
 export interface RecipesReducerType {
     loading: boolean,
@@ -14,14 +12,14 @@ export interface RecipesReducerType {
 export interface AssetsReducerType {
     loading: boolean,
     message: string | null,
-    assets?: AssetsArray,
+    assets?: KeyValuePair,
 }
 
 /** Root reducer object */
 export interface Store {
     root: {
         recipes: RecipesReducerType,
-        assets: RecipesReducerType,
+        assets: AssetsReducerType,
     }
     
 };
@@ -36,7 +34,7 @@ export interface ReducerActionType {
 /** Basic redipe structure */
 export interface Recipe {
     title: string,
-    photo?: string,
+    photo?: {[Key: string] : any},
     calories?: number,
     description?: string,
     chef?: string,
