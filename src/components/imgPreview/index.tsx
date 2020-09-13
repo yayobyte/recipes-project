@@ -22,7 +22,7 @@ const ImgPreview = ({ id }: Props) => {
     return (
         <div>
             {fields?.file?.url && 
-                <img src={fields?.file?.url} />
+                <img src={fields?.file?.url} width={345}/>
             }
         </div>
     )
