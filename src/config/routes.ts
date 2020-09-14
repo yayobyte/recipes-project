@@ -1,7 +1,7 @@
 import { RecipeList, Recipe, Error } from "../containers";
 
 export const RECIPES = "/recipes";
-export const RECIPE_ID = "recipes/:id";
+export const RECIPE_ID = "/recipes/:id";
 export const ERROR = "/error";
 
 export const router = [

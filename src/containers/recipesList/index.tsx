@@ -20,7 +20,7 @@ const Recipes = () => {
         <Container>
             {recipes &&
                 recipes.map(({ fields, sys } : RecipeResponseObject) => (
-                    <RecipePreview assetId={fields.photo?.sys?.id} title={fields?.title} key={sys?.id} id=""/>
+                    <RecipePreview assetId={fields.photo?.sys?.id} title={fields?.title} key={sys?.id} id={sys?.id}/>
                 ))
             }
         </Container>

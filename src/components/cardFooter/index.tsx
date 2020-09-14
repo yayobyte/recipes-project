@@ -1,15 +1,16 @@
 import React from "react";
 import Container from "./styled";
 import Button from "../button";
-import messages from "../../i18n";
+
 
 type Props = {
-    id: string,
+    click: () => void,
+    title: string,
 }
 
-const CardFooter = ({ id }: Props) => (
+const CardFooter = ({ click, title }: Props) => (
     <Container>
-        <Button title={messages.recipesList.moreDetails} click={() => console.log({id})}/>
+        <Button title={title} click={click}/>
     </Container>
 );
 
