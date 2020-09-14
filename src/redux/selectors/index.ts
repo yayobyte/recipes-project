@@ -14,3 +14,20 @@ export const useAssets = () => {
     }));
     return { images };
 }
+
+export const useError = () => {
+    const { hasError, errorMessage, id } = useSelector((store: Store) => ({
+        hasError: store.root.error.hasError,
+        errorMessage: store.root.error.errorMessage,
+        id: store.root.error.id,
+    }));
+    return { hasError, errorMessage, id };
+};
+
+export const useLoader = () => {
+    const { assetsLoader, recipesLoader } = useSelector((store: Store) => ({
+        assetsLoader: store.root.assets.loading,
+        recipesLoader: store.root.recipes.loading,
+    }));
+    return { loading: assetsLoader || recipesLoader };
+}

@@ -15,13 +15,20 @@ export interface AssetsReducerType {
     assets?: KeyValuePair,
 }
 
+/** Error Redux Structure */
+export interface ErrorReducerType {
+    hasError: boolean,
+    errorMessage?: string,
+    id?: number,
+}
+
 /** Root reducer object */
 export interface Store {
     root: {
         recipes: RecipesReducerType,
         assets: AssetsReducerType,
+        error: ErrorReducerType,
     }
-    
 };
 
 /** Action to be returned by an action creator */

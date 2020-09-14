@@ -3,21 +3,21 @@ import { useAssetCalls } from "../../redux/dispatchers";
 import { useAssets } from "../../redux/selectors";
 
 type Props = {
-    id: string,
+    assetId: string,
 }
 
-const ImgPreview = ({ id }: Props) => {
+const ImgPreview = ({ assetId }: Props) => {
     // Hooks
     const { getAssets } = useAssetCalls();
     const { images } = useAssets();
-    const { fields } = (images && images[id]) || {};
+    const { fields } = (images && images[assetId]) || {};
 
     //Effects
     useEffect(() => {
-        if(id) {
-            getAssets(id);
+        if(assetId) {
+            getAssets(assetId);
         }
-    }, [id]);
+    }, [assetId]);
 
     return (
         <div>

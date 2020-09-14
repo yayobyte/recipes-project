@@ -1,12 +1,13 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import { assetsReducer, recipesReducer } from "../redux/reducers";
+import { assetsReducer, recipesReducer, errorReducer } from "../redux/reducers";
 import thunk from "redux-thunk";
 
 const reducer = combineReducers({
     root: combineReducers({
         recipes: recipesReducer,
         assets: assetsReducer,
+        error: errorReducer,
     }),
 });
 

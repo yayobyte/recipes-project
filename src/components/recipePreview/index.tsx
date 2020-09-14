@@ -5,16 +5,17 @@ import CardHeader from "../cardHeader";
 import CardFooter from "../cardFooter";
 
 type Props = {
-    id: string,
+    assetId: string,
     title: string,
+    id: string,
 };
 
-const RecipePreview = ({ id, title }: Props) => {
+const RecipePreview = ({ id, title, assetId }: Props) => {
     return (
         <Container>
             <CardHeader title={title} />
-            <ImgPreview id={id} />
-            <CardFooter />
+            <ImgPreview assetId={assetId} />
+            <CardFooter id={id}/>
         </Container>
     );
 };
