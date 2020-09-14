@@ -1,36 +1,36 @@
 import {
-    GET_ASSET_REQ,
-    GET_ASSET_SUC,
-    GET_ASSET_FAIL,
+    GET_ENTRY_REQ,
+    GET_ENTRY_SUC,
+    GET_ENTRY_FAIL,
 } from "../actionTypes";
-import { ReducerActionType, AssetsReducerType } from "../models";
-const initialState : AssetsReducerType = {
+import { ReducerActionType, EntriesReducerType } from "../models";
+const initialState : EntriesReducerType = {
     loading: false,
     message: null,
-    assets: undefined,
+    entry: undefined,
 };
 
-const assetsReducer = (state = initialState, action: ReducerActionType) : AssetsReducerType=> {
+const entriesReducer = (state = initialState, action: ReducerActionType) : EntriesReducerType=> {
     switch (action.type) {
-        case GET_ASSET_REQ:
+        case GET_ENTRY_REQ:
             return ({
                 ...state,
                 loading: true,
             });
-        case GET_ASSET_SUC:
+        case GET_ENTRY_SUC:
             return action.id ?
             ({
                 ...state,
                 loading: false,
-                assets: {
-                    ...state.assets,
+                entry: {
+                    ...state.entry,
                     [action.id] : action.payload
                 },
             }) : ({
                 ...state,
                 loading: false,
             });
-        case GET_ASSET_FAIL:
+        case GET_ENTRY_FAIL:
             return ({
                 ...state,
                 loading: false,
@@ -40,4 +40,4 @@ const assetsReducer = (state = initialState, action: ReducerActionType) : Assets
     return state;
 };
 
-export default assetsReducer;
+export default entriesReducer;

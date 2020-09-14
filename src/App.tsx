@@ -22,14 +22,14 @@ function App() {
         if (hasError) {
             history.push(ERROR);
         }
-    }, []);
+    }, [hasError, history]);
 
     return (
         <div className="app">
             {loading && <Loader />}
             <Switch>
-                {router.map(({ route, Component}) => (
-                    <Route path={route} exact>
+                {router.map(({ route, Component}, index) => (
+                    <Route path={route} exact key={`route-${index}`}>
                         <Component />
                     </Route>
                 ))}

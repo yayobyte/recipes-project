@@ -2,6 +2,9 @@ export const messages = {
     recipesList: {
         moreDetails: "More Details...",
     },
+    recipe: {
+        goBackButton: "Show all recipes"
+    },
     error: {
         title: "Error",
         notFound: "Recipe not found",

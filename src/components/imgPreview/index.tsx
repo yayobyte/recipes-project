@@ -4,9 +4,10 @@ import { useAssets } from "../../redux/selectors";
 
 type Props = {
     assetId: string,
+    width: number,
 }
 
-const ImgPreview = ({ assetId }: Props) => {
+const ImgPreview = ({ assetId, width }: Props) => {
     // Hooks
     const { getAssets } = useAssetCalls();
     const { images } = useAssets();
@@ -22,7 +23,7 @@ const ImgPreview = ({ assetId }: Props) => {
     return (
         <div>
             {fields?.file?.url && 
-                <img src={fields?.file?.url} width={345}/>
+                <img src={fields?.file?.url} width={width}/>
             }
         </div>
     )

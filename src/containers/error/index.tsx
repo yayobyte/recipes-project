@@ -18,7 +18,7 @@ const Error = () => {
         if (!hasError) {
             history.push(RECIPES);
         }
-    }, [hasError]);
+    }, [hasError, history]);
 
     return (
         <Container>

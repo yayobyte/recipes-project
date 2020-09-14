@@ -10,7 +10,7 @@ const initialState : ErrorReducerType = {
     id: undefined,
 };
 
-const errorReducer = (state = initialState, action: ReducerActionType) => {
+const errorReducer = (state = initialState, action: ReducerActionType) : ErrorReducerType => {
     switch (action.type) {
         case CLEAR_ERROR_MESSAGE:
             return ({

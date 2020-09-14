@@ -13,6 +13,11 @@ export const GET_ASSET_REQ = 'GET_ASSET_REQ';
 export const GET_ASSET_SUC = 'GET_ASSET_SUC';
 export const GET_ASSET_FAIL = 'GET_ASSET_FAIL';
 
+//Get Entry Actions
+export const GET_ENTRY_REQ = 'GET_ENTRY_REQ';
+export const GET_ENTRY_SUC = 'GET_ENTRY_SUC';
+export const GET_ENTRY_FAIL = 'GET_ENTRY_FAIL';
+
 //Error Actions
 export const SET_ERROR_MESSAGE = "SET_ERROR_MESSAGE";
 export const CLEAR_ERROR_MESSAGE = "CLEAR_ERROR_MESSAGE";

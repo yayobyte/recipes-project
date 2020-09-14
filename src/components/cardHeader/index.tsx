@@ -9,7 +9,7 @@ const CardHeader = ({ title }: Props) => (
     <Container>
         <div className="row">
             <span className="icon" />
-            <span>{title}</span>
+            <span className="title">{title}</span>
         </div>
     </Container>
 );

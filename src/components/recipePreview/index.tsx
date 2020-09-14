@@ -25,7 +25,7 @@ const RecipePreview = ({ id, title, assetId }: Props) => {
     return (
         <Container>
             <CardHeader title={title} />
-            <ImgPreview assetId={assetId} />
+            <ImgPreview assetId={assetId} width={345}/>
             <CardFooter title={messages.recipesList.moreDetails} click={onClick}/>
         </Container>
     );

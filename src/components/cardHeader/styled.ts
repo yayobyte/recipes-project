@@ -2,7 +2,6 @@ import styled from "styled-components";
 import recipeIcon from "../../assets/img/recipe.svg";
 
 const Container = styled.div`
-    height: 40px;
     font-size: 14px;
     font-weight: 300;
     padding: 15px;

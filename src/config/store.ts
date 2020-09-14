@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import { assetsReducer, recipesReducer, errorReducer } from "../redux/reducers";
+import { assetsReducer, recipesReducer, errorReducer, selectedReducer, entriesReducer } from "../redux/reducers";
 import thunk from "redux-thunk";
 
 const reducer = combineReducers({
@@ -8,6 +8,8 @@ const reducer = combineReducers({
         recipes: recipesReducer,
         assets: assetsReducer,
         error: errorReducer,
+        selected: selectedReducer,
+        entries: entriesReducer,
     }),
 });
 

@@ -8,7 +8,7 @@ const Container = styled.div`
   height: 130px;
   overflow: hidden;
   left: 50%;
-  margin-top: 150px;
+  margin-top: 250px;
   margin-left: -65px;
   
  div {

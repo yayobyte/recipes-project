@@ -8,6 +8,13 @@ export interface RecipesReducerType {
     recipes?: any,
 };
 
+/** Selected Recipe reducer structure */
+export interface SelectedReducerType {
+    loading: boolean,
+    message: string | null,
+    recipe?: any,
+};
+
 /** Assets Redux Structure */
 export interface AssetsReducerType {
     loading: boolean,
@@ -15,11 +22,18 @@ export interface AssetsReducerType {
     assets?: KeyValuePair,
 }
 
+/** Entry Redux Structure */
+export interface EntriesReducerType {
+    loading: boolean,
+    message: string | null,
+    entry?: KeyValuePair,
+}
+
 /** Error Redux Structure */
 export interface ErrorReducerType {
     hasError: boolean,
     errorMessage?: string,
-    id?: number,
+    id?: string,
 }
 
 /** Root reducer object */
@@ -28,6 +42,8 @@ export interface Store {
         recipes: RecipesReducerType,
         assets: AssetsReducerType,
         error: ErrorReducerType,
+        selected: SelectedReducerType,
+        entries: EntriesReducerType,
     }
 };
 

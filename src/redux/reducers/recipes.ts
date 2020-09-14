@@ -10,7 +10,7 @@ const initialState : RecipesReducerType = {
     recipes: [],
 };
 
-const recipesReducer = (state = initialState, action: ReducerActionType) => {
+const recipesReducer = (state = initialState, action: ReducerActionType) : RecipesReducerType => {
     switch (action.type) {
         case GET_ALL_RECIPES_REQ:
             return ({
