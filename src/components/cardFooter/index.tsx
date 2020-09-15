@@ -6,11 +6,12 @@ import Button from "../button";
 type Props = {
     click: () => void,
     title: string,
+    id: string,
 }
 
-const CardFooter = ({ click, title }: Props) => (
+const CardFooter = ({ click, title, id }: Props) => (
     <Container>
-        <Button title={title} click={click}/>
+        <Button title={title} click={click} id={id}/>
     </Container>
 );
 

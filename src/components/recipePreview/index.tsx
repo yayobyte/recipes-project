@@ -23,10 +23,10 @@ const RecipePreview = ({ id, title, assetId }: Props) => {
     }, [history, id]);
 
     return (
-        <Container>
+        <Container data-testid={`recipe-preview-${id}`}>
             <CardHeader title={title} />
             <ImgPreview assetId={assetId} width={345}/>
-            <CardFooter title={messages.recipesList.moreDetails} click={onClick}/>
+            <CardFooter title={messages.recipesList.moreDetails} click={onClick} id={id}/>
         </Container>
     );
 };

@@ -17,7 +17,7 @@ const Recipes = () => {
     }, []);
 
     return (
-        <Container>
+        <Container data-testid="main-page">
             {recipes &&
                 recipes.map(({ fields, sys } : RecipeResponseObject) => (
                     <RecipePreview assetId={fields.photo?.sys?.id} title={fields?.title} key={sys?.id} id={sys?.id}/>

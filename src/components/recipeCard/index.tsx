@@ -55,7 +55,7 @@ const RecipeCard = () => {
         <Container>
             <CardHeader title={recipe?.title}/>
             <CardContent description={recipe?.description} calories={recipe?.calories} chef={(entry && entry[chef?.sys?.id]?.fields?.name )|| null} tags={tagList}/>
-            <CardFooter click={onClickBack} title={messages.recipe.goBackButton}/>
+            <CardFooter click={onClickBack} title={messages.recipe.goBackButton} id="back-to-recipes"/>
         </Container>
     );
 }

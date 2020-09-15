@@ -27,7 +27,7 @@ const Error = () => {
             <h3>{id}</h3>
             {errorMessage ? <div className="paragraph" dangerouslySetInnerHTML={ { __html: errorMessage } } /> : null}
             <div className="actions">
-                <Button title={messages.error.okButton} click={clearErrorMessage}/>
+                <Button title={messages.error.okButton} click={clearErrorMessage} id="error-"/>
             </div>
         </Container>
     )
