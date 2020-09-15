@@ -1,44 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation Steps
 
-## Available Scripts
+1. Install [https://www.nodejs.org](https://www.nodejs.org) globally
+2. Install `Yarn` globally `npm install -g yarn` 
+3. Install `git`
+4. Clone the repository into your local machine
+5. **IMPORTANT:** Please download and paste on the root of the project the *.env* file sent via email. This file contains the *Environment Varibales* needed to run this project, otherwise you'll see an error like this:
 
-In the project directory, you can run:
+![No Env Vars Error](/docs/no-env-error.png)
 
-### `yarn start`
+To troubleshoot this issue, just create (or paste the file into the root folder) a `.env` file with this two ENV VARS on it
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## To run the project
+6. Do `yarn install` to install dependencies
+7. Do `yarn start` to run the server and the live app
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Directory Structure
 
-### `yarn test`
+- `src/`
+    - `__inttests__/` Integration tests
+    - `assets/` Contains all the assets needed for the app
+    - `components/` Contains all of unstated components (without redux connection)
+    - `containers` Contains all the functional components which require redux connection
+      - `index.ts` component itself
+      - `styled.ts` file containing all the CSS styles within a styled-component Component
+    - `i18n` Contains all the messages shown to the user across the app. For now there is only en-US locale and no language change framework.
+    - `redux` Contains store managers
+        - `actions` Actions creators for each of the slices of the Redux Store
+        - `actionsTypes` Actions definitions
+        - `reducers` Reducers slices
+        - `selectors` Store selector hooks
+        - `dispatchers` Action dispatchers (Replaces the old *mapDispatchToProps* object from "react-redux" )
+        - `models` This folder contains all the types definitions needed on redux flow
+        - `network` Folder containing functions that queries the API. Basically controlling the redux actions (REQUEST, SUCCESS, FAIL) depending on the API response.
+  
+  ## Store design
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `recipes` List of recipes returned by backend API will be stored here
+- `assets` List of recipes assets required on the recipes, images for now
+- `error` Controls the error page. On error flag set to true, this store will trigger a Error Page
+- `selected` When a recipe is selected, this slice of state will contain all the information about it
+- `entries` Aditional entries required by a recipe. Chef and Tags entries for now
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies / Libraries Used
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Javascript
+- ReactJs
+- Redux
+- React-Redux
+- Thunk Middleware
+- Axios
+- HTTP Rest
+- Typescript
+- React Create App
+- Styled Components
+- React Testing Library
+- Jest
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screenshots
 
-### `yarn eject`
+![Recipe](/docs/recipe.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Recipe](/docs/recipePreview.png)

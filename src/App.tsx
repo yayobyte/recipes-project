@@ -24,6 +24,13 @@ function App() {
         }
     }, [hasError, history]);
 
+    useEffect(() => {
+        if (!process.env.REACT_APP_TOKEN || !process.env.REACT_APP_SPACES) {
+            setErrorMessage(messages.error.noEnvsMessage, messages.error.noEnvs);
+            history.push(ERROR);
+        }
+    },[]);
+
     return (
         <div className="app">
             {loading && <Loader />}
