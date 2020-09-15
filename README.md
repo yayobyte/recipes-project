@@ -4,7 +4,7 @@
 2. Install `Yarn` globally `npm install -g yarn` 
 3. Install `git`
 4. Clone the repository into your local machine
-5. **IMPORTANT:** Please download and paste on the root of the project the *.env* file sent via email. This file contains the *Environment Varibales* needed to run this project, otherwise you'll see an error like this:
+5. **IMPORTANT:** Please download and paste on the root of the project the *.env* file sent via email. This file contains the *Environment Variables* needed to run this project, otherwise you'll see an error like this:
 
 ![No Env Vars Error](/docs/no-env-error.png)
 
